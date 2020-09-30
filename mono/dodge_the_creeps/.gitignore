@@ -1,0 +1,10 @@
+# Godot auto generated files
+*.gen.*
+.import/
+
+# Jetbrains IDEs
+.idea/
+
+# Misc
+.DS_Store
+__MACOSX
