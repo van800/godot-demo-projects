@@ -15,7 +15,7 @@ public class HUD : CanvasLayer
         GetNode<Timer>("MessageTimer").Start();
     }
 
-    async public void ShowGameOver()
+    public async void ShowGameOver()
     {
         ShowMessage("Game Over");
 

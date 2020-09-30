@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Godot.NET.Sdk/3.2.3">
   <PropertyGroup>
-    <RootNamespace>DodgetheCreepswithC</RootNamespace>
     <AssemblyName>Dodge the Creeps with C#</AssemblyName>
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>

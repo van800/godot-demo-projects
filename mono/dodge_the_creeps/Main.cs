@@ -9,7 +9,7 @@ public class Main : Node
     private int _score;
 
     // We use 'System.Random' as an alternative to GDScript's random methods.
-    private Random _random = new Random();
+    private readonly Random _random = new Random();
 
     // We'll use this later because C# doesn't support GDScript's randi().
     private float RandRange(float min, float max)
@@ -66,7 +66,7 @@ public class Main : Node
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.SetOffset(_random.Next());
+        mobSpawnLocation.Offset = _random.Next();
 
         // Create a Mob instance and add it to the scene.
         var mobInstance = (RigidBody2D)mob.Instance();
@@ -83,8 +83,8 @@ public class Main : Node
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.SetLinearVelocity(new Vector2(RandRange(150f, 250f), 0).Rotated(direction));
+        mobInstance.LinearVelocity  = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
 
-        GetNode("HUD").Connect("StartGame", mobInstance, "OnStartGame");
+        GetNode<HUD>("HUD").Connect("StartGame", mobInstance, "OnStartGame");
     }
 }

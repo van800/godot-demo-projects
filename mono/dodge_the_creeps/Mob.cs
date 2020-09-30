@@ -9,10 +9,10 @@ public class Mob : RigidBody2D
     [Export]
     public int maxSpeed; // Maximum speed range.
 
-    private String[] _mobTypes = { "walk", "swim", "fly" };
+    private readonly string[] _mobTypes = { "walk", "swim", "fly" };
 
-    // C# doesn't have GDScript's random methods, so we use System.Random insetad.
-    private static Random _random = new Random();
+    // C# doesn't have GDScript's random methods, so we use System.Random instead.
+    private static readonly Random _random = new Random();
 
     public override void _Ready()
     {
