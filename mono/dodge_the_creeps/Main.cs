@@ -85,6 +85,6 @@ public class Main : Node
         // Choose the velocity.
         mobInstance.LinearVelocity  = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
 
-        GetNode<HUD>("HUD").Connect("StartGame", mobInstance, nameof(Mob.OnStartGame));
+        GetNode<HUD>("HUD").Connect(nameof(HUD.StartGame), mobInstance, nameof(Mob.OnStartGame));
     }
 }

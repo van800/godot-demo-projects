@@ -36,7 +36,7 @@ public class HUD : CanvasLayer
     public void OnStartButtonPressed()
     {
         GetNode<Button>("StartButton").Hide();
-        EmitSignal("StartGame");
+        EmitSignal(nameof(StartGame));
     }
 
     public void OnMessageTimerTimeout()
