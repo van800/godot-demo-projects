@@ -4,9 +4,6 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="**/*.tscn" />
-    <Content Include=".editorconfig" />
-    <Content Include=".gitattributes" />
-    <Content Include=".gitignore" />
+    <Content Include="**/*.tscn"/>
   </ItemGroup>
 </Project>
