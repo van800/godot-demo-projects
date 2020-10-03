@@ -4,3 +4,4 @@ root = true
 # Unix-style newlines with a newline ending every file
 [*.cs]
 insert_final_newline = true
+csharp_space_after_cast = false

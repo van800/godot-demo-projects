@@ -13,7 +13,7 @@ public class Main : Node
     // We'll use this later because C# doesn't support GDScript's randi().
     private float RandRange(float min, float max)
     {
-        return (float) _random.NextDouble() * (max - min) + min;
+        return (float)_random.NextDouble() * (max - min) + min;
     }
 
     public void GameOver()
@@ -68,7 +68,7 @@ public class Main : Node
         mobSpawnLocation.Offset = _random.Next();
 
         // Create a Mob instance and add it to the scene.
-        var mobInstance = (RigidBody2D) mob.Instance();
+        var mobInstance = (RigidBody2D)mob.Instance();
         AddChild(mobInstance);
 
         // Set the mob's direction perpendicular to the path direction.
