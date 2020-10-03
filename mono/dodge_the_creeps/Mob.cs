@@ -9,7 +9,7 @@ public class Mob : RigidBody2D
 
     private readonly string[] _mobTypes = {"walk", "swim", "fly"};
 
-    // C# doesn't have GDScript's random methods, so we use System.Random instead.
+    // We use 'System.Random' as an alternative to GDScript's random methods.
     private static readonly Random _random = new Random();
 
     public override void _Ready()
