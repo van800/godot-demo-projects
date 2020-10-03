@@ -4,6 +4,6 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="**/*.tscn"/>
+    <None Include="**/*.tscn"/>
   </ItemGroup>
 </Project>
