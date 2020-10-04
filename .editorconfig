@@ -5,3 +5,6 @@ root = true
 [*.cs]
 insert_final_newline = true
 csharp_space_after_cast = false
+
+[*.csproj]
+indent_size = 2
