@@ -3,7 +3,7 @@ using System;
 
 public class Main : Node
 {
-    [Export] private PackedScene _mob;
+    private readonly PackedScene _mob = (PackedScene)ResourceLoader.Load("res://Mob.tscn");
 
     private int _score;
 
