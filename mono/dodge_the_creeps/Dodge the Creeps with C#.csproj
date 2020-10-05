@@ -2,6 +2,7 @@
   <PropertyGroup>
     <AssemblyName>Dodge the Creeps with C#</AssemblyName>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <NoWarn>0649;0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <None Include="**/*.tscn"/>
