@@ -1,6 +1,6 @@
 extends Node
 
-export(PackedScene) var Mob
+export(PackedScene) var mob_scene
 var score
 
 func _ready():
@@ -26,7 +26,7 @@ func new_game():
 
 func _on_MobTimer_timeout():
 	$MobPath/MobSpawnLocation.offset = randi()
-	var mob = Mob.instance()
+	var mob = mob_scene.instance()
 	add_child(mob)
 	var direction = $MobPath/MobSpawnLocation.rotation + TAU / 4
 	mob.position = $MobPath/MobSpawnLocation.position

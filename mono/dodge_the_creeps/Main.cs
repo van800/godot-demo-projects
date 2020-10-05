@@ -3,7 +3,8 @@ using System;
 
 public class Main : Node
 {
-    private readonly PackedScene _mob = (PackedScene)ResourceLoader.Load("res://Mob.tscn");
+    [Export]
+    private PackedScene _mobScene;
 
     private int _score;
 
@@ -68,7 +69,7 @@ public class Main : Node
         mobSpawnLocation.Offset = _random.Next();
 
         // Create a Mob instance and add it to the scene.
-        var mobInstance = (RigidBody2D)_mob.Instance();
+        var mobInstance = (RigidBody2D)_mobScene.Instance();
         AddChild(mobInstance);
 
         // Set the mob's direction perpendicular to the path direction.
