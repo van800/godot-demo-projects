@@ -5,6 +5,6 @@
     <NoWarn>0649;0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="**/*.tscn"/>
+    <None Include="**/*.tscn" />
   </ItemGroup>
 </Project>
