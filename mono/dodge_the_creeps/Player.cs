@@ -5,7 +5,8 @@ public class Player : Area2D
     [Signal]
     public delegate void Hit();
 
-    [Export] private int _speed = 400; // How fast the player will move (pixels/sec).
+    [Export] 
+    private int _speed = 400; // How fast the player will move (pixels/sec).
 
     private Vector2 _screenSize; // Size of the game window.
 
