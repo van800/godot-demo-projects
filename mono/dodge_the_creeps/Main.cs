@@ -8,15 +8,6 @@ public class Main : Node
 
     private int _score;
 
-    // We use 'System.Random' as an alternative to GDScript's random methods.
-    private readonly Random _random = new Random();
-
-    // We'll use this later because C# doesn't support GDScript's randi().
-    private float RandRange(float min, float max)
-    {
-        return (float)_random.NextDouble() * (max - min) + min;
-    }
-
     public void GameOver()
     {
         GetNode<Timer>("MobTimer").Stop();
@@ -66,7 +57,7 @@ public class Main : Node
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.Offset = _random.Next();
+        mobSpawnLocation.Offset = GD.Randi();
 
         // Create a Mob instance and add it to the scene.
         Mob mobInstance = (Mob)_mobScene.Instance();
@@ -79,11 +70,11 @@ public class Main : Node
         mobInstance.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
-        direction += RandRange(-Mathf.Tau / 8, Mathf.Tau / 8);
+        direction += (float)GD.RandRange(-Mathf.Tau / 8, Mathf.Tau / 8);
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.LinearVelocity = new Vector2(RandRange(mobInstance.minSpeed, mobInstance.maxSpeed), 0).Rotated(direction);
+        mobInstance.LinearVelocity = new Vector2((float)GD.RandRange(mobInstance.minSpeed, mobInstance.maxSpeed), 0).Rotated(direction);
 
         GetNode<HUD>("HUD").Connect(nameof(HUD.StartGame), mobInstance, nameof(Mob.OnStartGame));
     }
