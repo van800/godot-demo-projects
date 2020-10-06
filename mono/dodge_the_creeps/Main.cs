@@ -1,10 +1,11 @@
 using Godot;
-using System;
 
 public class Main : Node
 {
+#pragma warning disable 649
     [Export]
     private PackedScene _mobScene;
+#pragma warning restore 649
 
     private int _score;
 
