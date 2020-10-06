@@ -11,8 +11,9 @@ public class Mob : RigidBody2D
 
     public override void _Ready()
     {
-        string[] mobTypes = GetNode<AnimatedSprite>("AnimatedSprite").Frames.GetAnimationNames();
-        GetNode<AnimatedSprite>("AnimatedSprite").Animation = mobTypes[GD.Randi() % mobTypes.Length];
+        var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        string[] mobTypes = animSprite.Frames.GetAnimationNames();
+        animSprite.Animation = mobTypes[GD.Randi() % mobTypes.Length];
     }
 
     public void OnVisibilityScreenExited()
