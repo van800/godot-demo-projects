@@ -56,16 +56,16 @@ public class Main : Node
 
     public void OnMobTimerTimeout()
     {
-        // Note: Normally it is best to use explicit types rather than the var keyword.
-        // However, var is acceptable to use here because the types are obviously
-        // PathFollow2D and RigidBody2D, since they appear later on the line.
+        // Note: Normally it is best to use explicit types rather than the `var`
+        // keyword. However, var is acceptable to use here because the types are
+        // obviously PathFollow2D and Mob, since they appear later on the line.
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
         mobSpawnLocation.Offset = GD.Randi();
 
         // Create a Mob instance and add it to the scene.
-        Mob mobInstance = (Mob)_mobScene.Instance();
+        var mobInstance = (Mob)_mobScene.Instance();
         AddChild(mobInstance);
 
         // Set the mob's direction perpendicular to the path direction.
@@ -80,7 +80,5 @@ public class Main : Node
 
         // Choose the velocity.
         mobInstance.LinearVelocity = new Vector2((float)GD.RandRange(mobInstance.minSpeed, mobInstance.maxSpeed), 0).Rotated(direction);
-
-        GetNode<HUD>("HUD").Connect(nameof(HUD.StartGame), mobInstance, nameof(Mob.OnStartGame));
     }
 }
