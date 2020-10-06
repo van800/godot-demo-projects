@@ -3,6 +3,7 @@ using Godot;
 public class Main : Node
 {
 #pragma warning disable 649
+    // We assign this in the editor, so we don't need the warning about not being assigned.
     [Export]
     private PackedScene _mobScene;
 #pragma warning restore 649
