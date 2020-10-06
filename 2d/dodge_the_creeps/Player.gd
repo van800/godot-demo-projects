@@ -36,7 +36,7 @@ func _process(delta):
 func start(pos):
 	position = pos
 	show()
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disabled", false)
 
 
 func _on_Player_body_entered(_body):

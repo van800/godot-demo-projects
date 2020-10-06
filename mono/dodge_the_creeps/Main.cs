@@ -26,6 +26,7 @@ public class Main : Node
 
     public void NewGame()
     {
+        GetTree().CallGroup("mobs", "queue_free");
         _score = 0;
 
         var player = GetNode<Player>("Player");

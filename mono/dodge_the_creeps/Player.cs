@@ -59,7 +59,7 @@ public class Player : Area2D
         Position = pos;
         Show();
         // Must be deferred as we can't change physics properties on a physics callback.
-        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("Disabled", false);
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", false);
     }
 
     public void OnPlayerBodyEntered(PhysicsBody2D body)
@@ -67,6 +67,6 @@ public class Player : Area2D
         Hide(); // Player disappears after being hit.
         EmitSignal(nameof(Hit));
         // Must be deferred as we can't change physics properties on a physics callback.
-        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("Disabled", true);
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
     }
 }
