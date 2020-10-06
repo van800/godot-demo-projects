@@ -3,6 +3,12 @@ using System;
 
 public class Mob : RigidBody2D
 {
+    [Export]
+    public int minSpeed;
+
+    [Export]
+    public int maxSpeed;
+
     private readonly string[] _mobTypes = {"walk", "swim", "fly"};
 
     // We use 'System.Random' as an alternative to GDScript's random methods.

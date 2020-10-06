@@ -37,6 +37,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+minSpeed = 150
+maxSpeed = 250
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.75, 0.75 )

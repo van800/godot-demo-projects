@@ -69,7 +69,7 @@ public class Main : Node
         mobSpawnLocation.Offset = _random.Next();
 
         // Create a Mob instance and add it to the scene.
-        var mobInstance = (RigidBody2D)_mobScene.Instance();
+        Mob mobInstance = (Mob)_mobScene.Instance();
         AddChild(mobInstance);
 
         // Set the mob's direction perpendicular to the path direction.
@@ -83,7 +83,7 @@ public class Main : Node
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
+        mobInstance.LinearVelocity = new Vector2(RandRange(mobInstance.minSpeed, mobInstance.maxSpeed), 0).Rotated(direction);
 
         GetNode<HUD>("HUD").Connect(nameof(HUD.StartGame), mobInstance, nameof(Mob.OnStartGame));
     }
