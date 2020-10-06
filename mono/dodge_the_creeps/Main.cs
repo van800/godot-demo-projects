@@ -8,6 +8,11 @@ public class Main : Node
 
     private int _score;
 
+    public override void _Ready()
+    {
+        GD.Randomize();
+    }
+
     public void GameOver()
     {
         GetNode<Timer>("MobTimer").Stop();
