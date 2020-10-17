@@ -1,46 +1,49 @@
 using Godot;
 
-public class HUD : CanvasLayer
+namespace DodgeTheCreeps
 {
-    [Signal]
-    public delegate void StartGame();
-
-    public void ShowMessage(string text)
+    public class HUD : CanvasLayer
     {
-        var messageLabel = GetNode<Label>("MessageLabel");
-        messageLabel.Text = text;
-        messageLabel.Show();
+        [Signal]
+        public delegate void StartGame();
 
-        GetNode<Timer>("MessageTimer").Start();
-    }
+        public void ShowMessage(string text)
+        {
+            var messageLabel = GetNode<Label>("MessageLabel");
+            messageLabel.Text = text;
+            messageLabel.Show();
 
-    public async void ShowGameOver()
-    {
-        ShowMessage("Game Over");
+            GetNode<Timer>("MessageTimer").Start();
+        }
 
-        var messageTimer = GetNode<Timer>("MessageTimer");
-        await ToSignal(messageTimer, "timeout");
+        public async void ShowGameOver()
+        {
+            ShowMessage("Game Over");
 
-        var messageLabel = GetNode<Label>("MessageLabel");
-        messageLabel.Text = "Dodge the\nCreeps!";
-        messageLabel.Show();
+            var messageTimer = GetNode<Timer>("MessageTimer");
+            await ToSignal(messageTimer, "timeout");
 
-        GetNode<Button>("StartButton").Show();
-    }
+            var messageLabel = GetNode<Label>("MessageLabel");
+            messageLabel.Text = "Dodge the\nCreeps!";
+            messageLabel.Show();
 
-    public void UpdateScore(int score)
-    {
-        GetNode<Label>("ScoreLabel").Text = score.ToString();
-    }
+            GetNode<Button>("StartButton").Show();
+        }
 
-    public void OnStartButtonPressed()
-    {
-        GetNode<Button>("StartButton").Hide();
-        EmitSignal(nameof(StartGame));
-    }
+        public void UpdateScore(int score)
+        {
+            GetNode<Label>("ScoreLabel").Text = score.ToString();
+        }
 
-    public void OnMessageTimerTimeout()
-    {
-        GetNode<Label>("MessageLabel").Hide();
+        public void OnStartButtonPressed()
+        {
+            GetNode<Button>("StartButton").Hide();
+            EmitSignal(nameof(StartGame));
+        }
+
+        public void OnMessageTimerTimeout()
+        {
+            GetNode<Label>("MessageLabel").Hide();
+        }
     }
 }

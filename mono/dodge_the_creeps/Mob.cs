@@ -1,29 +1,31 @@
 using Godot;
-using System;
 
-public class Mob : RigidBody2D
+namespace DodgeTheCreeps
 {
-    [Export]
-    public int minSpeed;
-
-    [Export]
-    public int maxSpeed;
-
-    public override void _Ready()
+    public class Mob : RigidBody2D
     {
-        var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-        animSprite.Playing = true;
-        string[] mobTypes = animSprite.Frames.GetAnimationNames();
-        animSprite.Animation = mobTypes[GD.Randi() % mobTypes.Length];
-    }
+        [Export]
+        public int minSpeed;
 
-    public void OnVisibilityScreenExited()
-    {
-        QueueFree();
-    }
+        [Export]
+        public int maxSpeed;
 
-    public void OnStartGame()
-    {
-        QueueFree();
+        public override void _Ready()
+        {
+            var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+            animSprite.Playing = true;
+            string[] mobTypes = animSprite.Frames.GetAnimationNames();
+            animSprite.Animation = mobTypes[GD.Randi() % mobTypes.Length];
+        }
+
+        public void OnVisibilityScreenExited()
+        {
+            QueueFree();
+        }
+
+        public void OnStartGame()
+        {
+            QueueFree();
+        }
     }
 }
