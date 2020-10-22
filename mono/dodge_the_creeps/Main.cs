@@ -1,3 +1,4 @@
+using ClassLibrary1;
 using Godot;
 
 namespace DodgeTheCreeps
@@ -14,6 +15,7 @@ namespace DodgeTheCreeps
 
         public override void _Ready()
         {
+            new Class1();
             GD.Randomize();
         }
 

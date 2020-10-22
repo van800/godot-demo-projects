@@ -3,4 +3,13 @@
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>DodgeTheCreeps</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="projects\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="projects\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="projects\ClassLibrary1\ClassLibrary1.csproj" />
+  </ItemGroup>
 </Project>
