@@ -15,7 +15,7 @@ namespace DodgeTheCreeps
 
         public override void _Ready()
         {
-            new Class1();
+            GD.Print(new Class1().State);
             GD.Randomize();
         }
 
