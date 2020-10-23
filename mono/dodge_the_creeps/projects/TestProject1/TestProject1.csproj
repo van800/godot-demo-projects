@@ -6,9 +6,8 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <IntermediateOutputPath>../../.mono/tests/obj/</IntermediateOutputPath>
-    <OutputPath>../../.mono/tests/bin/</OutputPath>
+  <PropertyGroup>
+   <OutputPath>../../.mono/tests/bin/$(Configuration)</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +19,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="obj\project.packagespec.json" />
+    <None Remove="obj\project.nuget.cache" />
+    <None Remove="obj\project.assets.json" />
+    <None Remove="obj\TestProject1.csproj.nuget.g.targets" />
+    <None Remove="obj\TestProject1.csproj.nuget.g.props" />
+    <None Remove="obj\rider.project.restore.info" />
   </ItemGroup>
 
 </Project>
