@@ -9,8 +9,7 @@ namespace TestProject1
         [Fact]
         public void Test1()
         {
-            Assert.False(false);
-            new Class1();
+            Assert.Equal("Hello", new Class1().State);
         }
     }
 }
