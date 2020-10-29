@@ -8,10 +8,34 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "WAT",
+"language": "GDScript",
+"path": "res://addons/WAT/namespace.gd"
+}, {
+"base": "Node",
+"class": "WATTest",
+"language": "GDScript",
+"path": "res://addons/WAT/core/test/test.gd"
+} ]
 _global_script_class_icons={
+"WAT": "",
+"WATTest": ""
+}
+RunInEngine=false
+
+[WAT]
+
+Test_Directory="res://tests"
+Results_Directory="res://tests/results/WAT"
+Minimize_Window_When_Running_Tests=false
+TestStrategy={
 
 }
+Tags=PoolStringArray(  )
+Display=8
+Window_Size=Vector2( 1280, 720 )
 
 [application]
 
@@ -29,6 +53,10 @@ config/icon="res://icon.png"
 
 window/size/width=480
 window/size/height=720
+
+[editor_plugins]
+
+enabled=PoolStringArray( "WAT" )
 
 [input]
 
