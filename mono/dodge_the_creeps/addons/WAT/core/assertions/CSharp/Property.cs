@@ -1,4 +1,4 @@
-﻿namespace WAT
+﻿﻿namespace WAT
 {
     public class Property: Assertion
     {

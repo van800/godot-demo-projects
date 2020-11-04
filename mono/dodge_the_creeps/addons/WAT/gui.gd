@@ -24,6 +24,10 @@ onready var MethodSelector: OptionButton = $GUI/Method
 onready var More: Button = $GUI/Interact/More
 var execute = preload("res://addons/WAT/core/test_runner/execute.gd").new()
 
+# An Attempt To Handle Error On Exit
+func _exit_tree():
+	queue_free()
+
 func _on_view_pressed(id: int) -> void:
 	match id:
 		RESULTS.EXPAND_ALL:

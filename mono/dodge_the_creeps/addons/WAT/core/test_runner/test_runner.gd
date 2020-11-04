@@ -4,6 +4,7 @@ const COMPLETED: String = "completed"
 var JunitXML = preload("res://addons/WAT/resources/JUnitXML.gd").new()
 var test_loader: Reference = preload("test_loader.gd").new()
 var test_results: Resource = preload("res://addons/WAT/resources/results.tres")
+var test_double_registry = preload("res://addons/WAT/core/double/registry.gd").new()
 var _tests: Array = []
 var _cases: Array = []
 var _strategy: Dictionary = {}
@@ -28,7 +29,6 @@ func _ready() -> void:
 		print("Starting WAT Test Runner")
 	OS.window_minimized = ProjectSettings.get_setting(
 			"WAT/Minimize_Window_When_Running_Tests")
-	_create_test_double_registry()
 	_begin()
 	
 func _begin():
@@ -77,7 +77,7 @@ func run(test = _tests.pop_front().new()) -> void:
 		test.SetUp(testcase)
 	elif test.get_script() is GDScript:
 		testcase = TestCase.new(test.title(), test.path())
-		test.setup(testcase)
+		test.setup(testcase, test_double_registry)
 	var executable = Executor.new(test)
 	var start_time = OS.get_ticks_msec()
 	add_child(executable)
@@ -111,14 +111,12 @@ func end() -> void:
 	else:
 		queue_free()
 
-func _create_test_double_registry() -> void:
-	if not ProjectSettings.has_setting("WAT/TestDouble"):
-		var registry = load("res://addons/WAT/core/double/registry.gd")
-		ProjectSettings.set_setting("WAT/TestDouble", registry.new())
-		
 func clear() -> void:
-	if ProjectSettings.has_setting("WAT/TestDouble"):
-		ProjectSettings.get_setting("WAT/TestDouble").clear()
-		if ProjectSettings.get("RunInEngine"):
-			ProjectSettings.get_setting("WAT/TestDouble").free()
+	pass
+#	if ProjectSettings.has_setting("WAT/TestDouble"):
+#		ProjectSettings.get_setting("WAT/TestDouble").clear()
+#		if ProjectSettings.get("RunInEngine"):
+#			var testDouble = ProjectSettings.get_setting("WAT/TestDouble")
+			#ProjectSettings.set_setting("WAT/TestDouble", "Disabled")
+			#ProjectSettings.get_setting("WAT/TestDouble").free()
 

@@ -17,13 +17,15 @@ var base_methods: Dictionary = {}
 var dependecies: Array = []
 var is_built_in: bool = false
 var object
+var registry
 
-func _init(_klass: String, _inner_klass: String, deps: Array = []) -> void:
+func _init(_registry, _klass: String, _inner_klass: String, deps: Array = []) -> void:
+	registry = _registry
 	klass = _klass
 	inner_klass = _inner_klass
 	dependecies = deps
 	is_built_in = ClassDB.class_exists(_klass)
-	ProjectSettings.get_setting("WAT/TestDouble").register(self)
+	registry.register(self)
 	set_methods()
 	
 func method(name: String, keyword: String = "") -> Method:

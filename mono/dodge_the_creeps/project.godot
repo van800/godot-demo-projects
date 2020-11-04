@@ -56,7 +56,7 @@ window/size/height=720
 
 [editor_plugins]
 
-enabled=PoolStringArray( "WAT" )
+enabled=PoolStringArray( "Rider", "WAT" )
 
 [input]
 

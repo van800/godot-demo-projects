@@ -48,9 +48,10 @@ static func get_instance_base_type() -> String:
 # and then work back up from there
 # We may also need to create an external script when loading tests
 # so we can collect them via c# attributes
-func setup(testcase):
+func setup(testcase, registry):
 	asserts = load("res://addons/WAT/core/assertions/GDscript/assertions.gd").new()
 	direct = load("res://addons/WAT/core/double/factory.gd").new()
+	direct.registry = registry
 	Testcase = testcase # No changes needed
 	Yielder = load("res://addons/WAT/core/test/yielder.gd").new() # Research C# Yield
 	_watcher = load("res://addons/WAT/core/test/watcher.gd").new() # Research signal-interoperation
