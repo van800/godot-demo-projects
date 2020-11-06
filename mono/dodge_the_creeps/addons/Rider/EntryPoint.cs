@@ -16,12 +16,15 @@ namespace DodgeTheCreeps.addons.Rider
             var dllFile = "/home/ivan-shakhov/Work/godot-support/resharper/build/GodotEditor/bin/Debug/net461/JetBrains.Rider.Godot.Editor.Plugin.dll"; // todo: get relatively to riderPath
             //var bytes = File.ReadAllBytes(dllFile); 
             //var assembly = AppDomain.CurrentDomain.Load(bytes); // doesn't lock assembly on disk
-            
+
             var assembly = AppDomain.CurrentDomain.Load(AssemblyName.GetAssemblyName(dllFile));
-            
+
             // call EntryPoint in the assembly with reflection
             var type = assembly.GetType("JetBrains.Rider.Godot.Editor.EntryPoint");
             RuntimeHelpers.RunClassConstructor(type.TypeHandle);
+
+            var solutionName = (string)ProjectSettings.GetSetting("application/config/name");
+            // todo: set static RiderPath and SolutionName in the EntryPoint
         }
 
         public static readonly string EditorPathSettingName = "mono/editor/editor_path_optional";
