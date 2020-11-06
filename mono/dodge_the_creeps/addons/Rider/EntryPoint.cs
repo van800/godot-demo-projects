@@ -24,7 +24,7 @@ namespace DodgeTheCreeps.addons.Rider
             RuntimeHelpers.RunClassConstructor(type.TypeHandle);
 
             var solutionName = (string)ProjectSettings.GetSetting("application/config/name");
-            // todo: set static RiderPath and SolutionName in the EntryPoint
+            // todo: set static SolutionName in the EntryPoint
         }
 
         public static readonly string EditorPathSettingName = "mono/editor/editor_path_optional";
