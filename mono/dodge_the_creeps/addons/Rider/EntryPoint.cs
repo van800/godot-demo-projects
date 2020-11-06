@@ -1,5 +1,7 @@
 #if TOOLS
 using System;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using Godot;
 using File = System.IO.File;
 
@@ -11,12 +13,15 @@ namespace DodgeTheCreeps.addons.Rider
         public override void _Ready()
         {
             var riderPath = GetRiderPathFromSettings();
-            var dllFile = "/home/ivan-shakhov/Work/DefaultCompany/ClassLibrary9/ClassLibrary9/bin/Debug/net47/ClassLibrary9.dll"; // todo: get relatively to riderPath
-            var bytes = File.ReadAllBytes(dllFile); 
-            var assembly = AppDomain.CurrentDomain.Load(bytes); // doesn't lock assembly on disk
+            var dllFile = "/home/ivan-shakhov/Work/godot-support/resharper/build/GodotEditor/bin/Debug/net461/JetBrains.Rider.Godot.Editor.Plugin.dll"; // todo: get relatively to riderPath
+            //var bytes = File.ReadAllBytes(dllFile); 
+            //var assembly = AppDomain.CurrentDomain.Load(bytes); // doesn't lock assembly on disk
+            
+            var assembly = AppDomain.CurrentDomain.Load(AssemblyName.GetAssemblyName(dllFile));
             
             // call EntryPoint in the assembly with reflection
-            
+            var type = assembly.GetType("JetBrains.Rider.Godot.Editor.EntryPoint");
+            RuntimeHelpers.RunClassConstructor(type.TypeHandle);
         }
 
         public static readonly string EditorPathSettingName = "mono/editor/editor_path_optional";
