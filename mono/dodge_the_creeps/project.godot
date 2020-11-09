@@ -46,7 +46,7 @@ and avoid the enemies for as long as possible.
 This is a finished version of the game featured in the 'Your first game'
 tutorial in the documentation, but ported to C#. For more details,
 consider following the tutorial in the documentation."
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Rider/runner.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -56,7 +56,7 @@ window/size/height=720
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Rider", "WAT" )
+enabled=PoolStringArray( "WAT" )
 
 [input]
 
