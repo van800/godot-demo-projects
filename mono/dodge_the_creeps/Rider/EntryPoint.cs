@@ -22,9 +22,15 @@ namespace DodgeTheCreeps.Rider
             if (OS.GetCmdlineArgs().Length <4)
                 return;
 
+            Deferred();
+        }
+
+        private async void Deferred()
+        {
+            // await ToSignal(GetTree(), "idle_frame");
+            await ToSignal(GetTree().CreateTimer(1), "timeout"); // helps to let the game paint itself
             var unitTestAssembly = OS.GetCmdlineArgs()[1];
             var unitTestArgs = OS.GetCmdlineArgs()[3].Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries).ToArray();
-            
             // https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.executeassembly?view=netframework-4.7.2
             AppDomain currentDomain = AppDomain.CurrentDomain;
             currentDomain.ExecuteAssembly(unitTestAssembly, unitTestArgs);
