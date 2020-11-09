@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Godot;
 using Environment = System.Environment;
+using Thread = System.Threading.Thread;
 
 
 namespace DodgeTheCreeps.Rider
@@ -22,18 +23,25 @@ namespace DodgeTheCreeps.Rider
             if (OS.GetCmdlineArgs().Length <4)
                 return;
 
-            Deferred();
-        }
-
-        private async void Deferred()
-        {
-            // await ToSignal(GetTree(), "idle_frame");
-            await ToSignal(GetTree().CreateTimer(1), "timeout"); // helps to let the game paint itself
             var unitTestAssembly = OS.GetCmdlineArgs()[1];
             var unitTestArgs = OS.GetCmdlineArgs()[3].Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries).ToArray();
             // https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.executeassembly?view=netframework-4.7.2
             AppDomain currentDomain = AppDomain.CurrentDomain;
-            currentDomain.ExecuteAssembly(unitTestAssembly, unitTestArgs);
+            var thread = new Thread(() =>
+            {
+                currentDomain.ExecuteAssembly(unitTestAssembly, unitTestArgs);
+            });
+            thread.Start();
+
+            WaitForThreadExit(thread);
+        }
+
+        private async void WaitForThreadExit(Thread thread)
+        {
+            while (thread.IsAlive)
+            {
+                await ToSignal(GetTree().CreateTimer(1), "timeout");
+            }
         }
     }
 }

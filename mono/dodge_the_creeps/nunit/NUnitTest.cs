@@ -14,8 +14,7 @@ namespace DodgeTheCreeps.nunit
             Console.WriteLine("Testsss");
             GD.Print("NUnitTest");
             var main = (Main)ResourceLoader.Load<PackedScene>("res://Main.tscn").Instance();
-            GD.Print(main.Name);
-            Assert.AreEqual(200, main.Name);
+            Assert.AreEqual("Main", main.Name);
         }
     }
 }
