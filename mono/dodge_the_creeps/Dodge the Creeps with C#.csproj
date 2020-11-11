@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="**/*.tscn"/>
+    <None Include="**/*.tscn" />
   </ItemGroup>
   
   <ItemGroup>

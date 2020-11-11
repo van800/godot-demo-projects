@@ -1,4 +1,3 @@
-using System;
 using ClassLibrary1;
 using Xunit;
 
