@@ -4,6 +4,11 @@
     <RootNamespace>DodgeTheCreeps</RootNamespace>
   </PropertyGroup>
 
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="$(MicrosoftNETFrameworkReferenceAssembliesLatestPackageVersion)" IsImplicitlyDefined="true" Condition="'$(_FullFrameworkReferenceAssemblyPaths)' == ''"/>
+    </ItemGroup>
+
   <ItemGroup>
     <None Include="**/*.tscn"/>
   </ItemGroup>
