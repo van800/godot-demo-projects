@@ -4,6 +4,8 @@
     <AssemblyName>GodotNUnitTestProject</AssemblyName>
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>GodotNUnitTestProject</RootNamespace>
+    <GodotUseNETFrameworkRefAssemblies>true</GodotUseNETFrameworkRefAssemblies>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>
