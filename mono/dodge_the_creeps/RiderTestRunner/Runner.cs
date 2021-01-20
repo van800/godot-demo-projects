@@ -4,10 +4,9 @@ using Godot;
 using Environment = System.Environment;
 using Thread = System.Threading.Thread;
 
-
-namespace DodgeTheCreeps.Rider
+namespace RiderTestRunner
 {
-    public class EntryPoint : Node
+    public class Runner : Node
     {
         public override void _Ready()
         {
