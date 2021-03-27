@@ -1,4 +1,4 @@
-<Project Sdk="Godot.NET.Sdk/3.2.3">
+<Project Sdk="Godot.NET.Sdk/3.2.4">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>DodgeTheCreeps</RootNamespace>
@@ -6,19 +6,10 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
   <ItemGroup>
     <None Include="**/*.tscn" />
     <None Remove="ClassLibrary1\**" />
   </ItemGroup>
-  
   <ItemGroup>
     <Compile Remove="projects\**" />
     <Compile Remove="ClassLibrary1\**" />
