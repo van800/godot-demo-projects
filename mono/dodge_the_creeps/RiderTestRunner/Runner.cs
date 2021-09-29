@@ -12,6 +12,7 @@ namespace RiderTestRunner
     {
         public override void _Ready()
         {
+            // GDU.Instance = this; // for GodotXUnit https://github.com/fledware/GodotXUnit/issues/8#issuecomment-929849478
             var textNode = GetNode<RichTextLabel>("RichTextLabel");
             foreach (var arg in OS.GetCmdlineArgs())
             {
