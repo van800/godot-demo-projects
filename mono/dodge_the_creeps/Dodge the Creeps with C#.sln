@@ -2,6 +2,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodge the Creeps with C#", "Dodge the Creeps with C#.csproj", "{75CB0382-CCCC-4A4D-ABF0-C6CD04D9F832}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "projects\ClassLibrary1\ClassLibrary1.csproj", "{E2FC8D21-81B6-42DF-93BC-66A748B84D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GodotNUnitTestProject", "projects\GodotNUnitTestProject\GodotNUnitTestProject.csproj", "{161AFDEE-414A-4EE2-B9E0-7DDC4A9DBCAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject", "projects\NUnitTestProject\NUnitTestProject.csproj", "{86C6111F-B534-43EE-8489-A1FB2F2E5468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject", "projects\XUnitTestProject\XUnitTestProject.csproj", "{594A1F02-D148-4CA2-A18E-4FC4653829DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GodotXUnitTestProject", "projects\GodotXUnitTestProject\GodotXUnitTestProject.csproj", "{8D5D4DE0-2449-459F-8EC1-4AD4A5FAD5A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 	Debug|Any CPU = Debug|Any CPU
@@ -15,5 +25,35 @@ Global
 		{75CB0382-CCCC-4A4D-ABF0-C6CD04D9F832}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{75CB0382-CCCC-4A4D-ABF0-C6CD04D9F832}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{75CB0382-CCCC-4A4D-ABF0-C6CD04D9F832}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{E2FC8D21-81B6-42DF-93BC-66A748B84D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FC8D21-81B6-42DF-93BC-66A748B84D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FC8D21-81B6-42DF-93BC-66A748B84D01}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FC8D21-81B6-42DF-93BC-66A748B84D01}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FC8D21-81B6-42DF-93BC-66A748B84D01}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FC8D21-81B6-42DF-93BC-66A748B84D01}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{161AFDEE-414A-4EE2-B9E0-7DDC4A9DBCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161AFDEE-414A-4EE2-B9E0-7DDC4A9DBCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161AFDEE-414A-4EE2-B9E0-7DDC4A9DBCAB}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{161AFDEE-414A-4EE2-B9E0-7DDC4A9DBCAB}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{161AFDEE-414A-4EE2-B9E0-7DDC4A9DBCAB}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{161AFDEE-414A-4EE2-B9E0-7DDC4A9DBCAB}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{86C6111F-B534-43EE-8489-A1FB2F2E5468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C6111F-B534-43EE-8489-A1FB2F2E5468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C6111F-B534-43EE-8489-A1FB2F2E5468}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C6111F-B534-43EE-8489-A1FB2F2E5468}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{86C6111F-B534-43EE-8489-A1FB2F2E5468}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C6111F-B534-43EE-8489-A1FB2F2E5468}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{594A1F02-D148-4CA2-A18E-4FC4653829DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594A1F02-D148-4CA2-A18E-4FC4653829DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594A1F02-D148-4CA2-A18E-4FC4653829DF}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594A1F02-D148-4CA2-A18E-4FC4653829DF}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{594A1F02-D148-4CA2-A18E-4FC4653829DF}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{594A1F02-D148-4CA2-A18E-4FC4653829DF}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{8D5D4DE0-2449-459F-8EC1-4AD4A5FAD5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D5D4DE0-2449-459F-8EC1-4AD4A5FAD5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D5D4DE0-2449-459F-8EC1-4AD4A5FAD5A8}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{8D5D4DE0-2449-459F-8EC1-4AD4A5FAD5A8}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{8D5D4DE0-2449-459F-8EC1-4AD4A5FAD5A8}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{8D5D4DE0-2449-459F-8EC1-4AD4A5FAD5A8}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
