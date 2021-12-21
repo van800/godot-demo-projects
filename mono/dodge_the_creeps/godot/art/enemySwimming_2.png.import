@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerGrey_walk1.png-c4773fe7a7bf85d7ab732eb4458c2742.stex"
+path="res://.import/enemySwimming_2.png-4c0cbc0732264c4ea3290340bd4a0a62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/playerGrey_walk1.png"
-dest_files=[ "res://.import/playerGrey_walk1.png-c4773fe7a7bf85d7ab732eb4458c2742.stex" ]
+source_file="res://art/enemySwimming_2.png"
+dest_files=[ "res://.import/enemySwimming_2.png-4c0cbc0732264c4ea3290340bd4a0a62.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

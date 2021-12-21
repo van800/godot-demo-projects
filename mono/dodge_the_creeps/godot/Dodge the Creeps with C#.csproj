@@ -11,14 +11,6 @@
     <None Remove="ClassLibrary1\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="projects\**" />
-    <Compile Remove="ClassLibrary1\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="projects\**" />
-    <EmbeddedResource Remove="ClassLibrary1\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="projects\ClassLibrary1\ClassLibrary1.csproj" />
+    <ProjectReference Include="..\src\ClassLibrary1\ClassLibrary1.csproj" />
   </ItemGroup>
 </Project>

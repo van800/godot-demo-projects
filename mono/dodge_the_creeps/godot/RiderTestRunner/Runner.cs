@@ -18,6 +18,11 @@ namespace RiderTestRunner
             {
                 textNode.Text += Environment.NewLine + arg;
             }
+            
+            AppDomain.CurrentDomain.DomainUnload+= (sender, args) =>
+            {
+                
+            };
 
             if (OS.GetCmdlineArgs().Length < 4)
                 return;

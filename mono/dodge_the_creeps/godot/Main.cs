@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using ClassLibrary1;
 using Godot;
 
@@ -15,7 +17,12 @@ namespace DodgeTheCreeps
 
         public override void _Ready()
         {
-            GD.Print(new Class1().State);
+            var v = System.Environment.GetEnvironmentVariables();
+            foreach (DictionaryEntry entry in v)
+            {
+                GD.Print($"{entry.Key}={entry.Value}");
+            }
+            GD.Print("Main.Ready"+new Class1().State);
             GD.Randomize();
         }
 

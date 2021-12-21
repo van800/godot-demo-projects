@@ -17,6 +17,7 @@ namespace DodgeTheCreeps
 
         public override void _Ready()
         {
+            GD.Print("Player.Ready");
             _screenSize = GetViewportRect().Size;
             Hide();
         }

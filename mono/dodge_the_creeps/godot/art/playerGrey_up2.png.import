@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemyFlyingAlt_2.png-31dc7310eda6e1b721224f3cd932c076.stex"
+path="res://.import/playerGrey_up2.png-d6aba85f5f2675ebc7045efa7552ee79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemyFlyingAlt_2.png"
-dest_files=[ "res://.import/enemyFlyingAlt_2.png-31dc7310eda6e1b721224f3cd932c076.stex" ]
+source_file="res://art/playerGrey_up2.png"
+dest_files=[ "res://.import/playerGrey_up2.png-d6aba85f5f2675ebc7045efa7552ee79.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
