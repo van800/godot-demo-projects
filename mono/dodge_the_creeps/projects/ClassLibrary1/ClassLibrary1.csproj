@@ -1,6 +1,7 @@
-﻿<Project Sdk="Godot.NET.Sdk/3.2.4">
+<Project Sdk="Godot.NET.Sdk/4.0.0-beta1">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>ClassLib1</RootNamespace>
   </PropertyGroup>
 </Project>

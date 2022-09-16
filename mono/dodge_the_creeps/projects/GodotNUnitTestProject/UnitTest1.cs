@@ -14,8 +14,8 @@ namespace TestProject1
             int i = 0;
             Console.WriteLine("Testsss");
             GD.Print("NUnitTest");
-            var main = (Main)ResourceLoader.Load<PackedScene>("res://Main.tscn").Instance();
-            Assert.AreEqual("Main", main.Name);
+            var main = (Main)ResourceLoader.Load<PackedScene>("res://Main.tscn").Instantiate();
+            Assert.AreEqual("Main", main.Name.ToString());
         }
     }
 }

@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.cs" type="Script" id=1]
-[ext_resource path="res://art/playerGrey_walk1.png" type="Texture" id=2]
-[ext_resource path="res://art/playerGrey_walk2.png" type="Texture" id=3]
-[ext_resource path="res://art/playerGrey_up1.png" type="Texture" id=4]
-[ext_resource path="res://art/playerGrey_up2.png" type="Texture" id=5]
+[ext_resource path="res://art/playerGrey_walk1.png" type="Texture2D" id=2]
+[ext_resource path="res://art/playerGrey_walk2.png" type="Texture2D" id=3]
+[ext_resource path="res://art/playerGrey_up1.png" type="Texture2D" id=4]
+[ext_resource path="res://art/playerGrey_up2.png" type="Texture2D" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -24,9 +24,9 @@ radius = 27.3777
 height = 14.0303
 
 [sub_resource type="Gradient" id=3]
-colors = PoolColorArray( 1, 1, 1, 0.501961, 1, 1, 1, 0 )
+colors = PackedColorArray( 1, 1, 1, 0.501961, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=4]
+[sub_resource type="GradientTexture2D" id=4]
 gradient = SubResource( 3 )
 
 [sub_resource type="Curve" id=5]
@@ -35,7 +35,7 @@ _data = [ Vector2( 0.00451484, 0.5176 ), 0.0, 0.0, 0, 0, Vector2( 0.98702, 0.315
 [sub_resource type="CurveTexture" id=6]
 curve = SubResource( 5 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticleProcessMaterial" id=7]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 1.0
@@ -53,7 +53,7 @@ __meta__ = {
 }
 _speed = 400
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "right"
@@ -61,7 +61,7 @@ animation = "right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[node name="Trail" type="Particles2D" parent="."]
+[node name="Trail" type="GPUParticles2D" parent="."]
 show_behind_parent = true
 z_index = -1
 amount = 10

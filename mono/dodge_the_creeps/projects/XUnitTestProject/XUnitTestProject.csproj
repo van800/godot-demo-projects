@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
 
     <IsPackable>false</IsPackable>
 
@@ -20,16 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="obj\project.packagespec.json" />
     <None Remove="obj\project.nuget.cache" />
     <None Remove="obj\project.assets.json" />
     <None Remove="obj\TestProject1.csproj.nuget.g.targets" />
     <None Remove="obj\TestProject1.csproj.nuget.g.props" />
     <None Remove="obj\rider.project.restore.info" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
   </ItemGroup>
 
 </Project>

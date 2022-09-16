@@ -2,10 +2,10 @@ using Godot;
 
 namespace DodgeTheCreeps
 {
-    public class Player : Area2D
+    public partial class Player : Area2D
     {
         [Signal]
-        public delegate void Hit();
+        public delegate void HitEventHandler();
 
         // These only need to be accessed in this script, so we can make them private.
         // Private variables in C# in Godot have their name starting with an
@@ -21,13 +21,13 @@ namespace DodgeTheCreeps
             Hide();
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             Vector2 velocity; // The player's movement vector.
             velocity.x = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
             velocity.y = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
 
-            var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+            var animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
             if (velocity.Length() > 0)
             {
@@ -39,7 +39,7 @@ namespace DodgeTheCreeps
                 animatedSprite.Stop();
             }
 
-            Position += velocity * delta;
+            Position += velocity * (float)delta;
             Position = new Vector2(
                 x: Mathf.Clamp(Position.x, 0, _screenSize.x),
                 y: Mathf.Clamp(Position.y, 0, _screenSize.y)
@@ -70,7 +70,7 @@ namespace DodgeTheCreeps
         public void OnPlayerBodyEntered(PhysicsBody2D body)
         {
             Hide(); // Player disappears after being hit.
-            EmitSignal(nameof(Hit));
+            EmitSignal(nameof(HitEventHandler));
             // Must be deferred as we can't change physics properties on a physics callback.
             GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
         }
