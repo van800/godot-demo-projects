@@ -2,7 +2,7 @@ using Godot;
 
 namespace DodgeTheCreeps
 {
-    public class Mob : RigidBody2D
+    public partial class Mob : RigidBody2D
     {
         [Export]
         public int minSpeed;
@@ -12,7 +12,7 @@ namespace DodgeTheCreeps
 
         public override void _Ready()
         {
-            var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+            var animSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
             animSprite.Playing = true;
             string[] mobTypes = animSprite.Frames.GetAnimationNames();
             animSprite.Animation = mobTypes[GD.Randi() % mobTypes.Length];

@@ -1,9 +1,8 @@
-using ClassLibrary1;
 using Godot;
 
 namespace DodgeTheCreeps
 {
-    public class Main : Node
+    public partial class Main : Node
     {
 #pragma warning disable 649
         // We assign this in the editor, so we don't need the warning about not being assigned.
@@ -15,7 +14,6 @@ namespace DodgeTheCreeps
 
         public override void _Ready()
         {
-            GD.Print(new Class1().State);
             GD.Randomize();
         }
 
@@ -38,7 +36,7 @@ namespace DodgeTheCreeps
             _score = 0;
 
             var player = GetNode<Player>("Player");
-            var startPosition = GetNode<Position2D>("StartPosition");
+            var startPosition = GetNode<Marker2D>("StartPosition");
             player.Start(startPosition.Position);
 
             GetNode<Timer>("StartTimer").Start();
@@ -65,30 +63,30 @@ namespace DodgeTheCreeps
 
         public void OnMobTimerTimeout()
         {
-            // Note: Normally it is best to use explicit types rather than the `var`
-            // keyword. However, var is acceptable to use here because the types are
-            // obviously PathFollow2D and Mob, since they appear later on the line.
-
-            // Choose a random location on Path2D.
-            var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-            mobSpawnLocation.Offset = GD.Randi();
-
-            // Create a Mob instance and add it to the scene.
-            var mobInstance = (Mob)_mobScene.Instance();
-            AddChild(mobInstance);
-
-            // Set the mob's direction perpendicular to the path direction.
-            float direction = mobSpawnLocation.Rotation + Mathf.Tau / 4;
-
-            // Set the mob's position to a random location.
-            mobInstance.Position = mobSpawnLocation.Position;
-
-            // Add some randomness to the direction.
-            direction += (float)GD.RandRange(-Mathf.Tau / 8, Mathf.Tau / 8);
-            mobInstance.Rotation = direction;
-
-            // Choose the velocity.
-            mobInstance.LinearVelocity = new Vector2((float)GD.RandRange(mobInstance.minSpeed, mobInstance.maxSpeed), 0).Rotated(direction);
+            // // Note: Normally it is best to use explicit types rather than the `var`
+            // // keyword. However, var is acceptable to use here because the types are
+            // // obviously PathFollow2D and Mob, since they appear later on the line.
+            //
+            // // Choose a random location on Path2D.
+            // var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
+            // mobSpawnLocation.Offset = GD.Randi();
+            //
+            // // Create a Mob instance and add it to the scene.
+            // var mobInstance = (Mob)_mobScene.Instance();
+            // AddChild(mobInstance);
+            //
+            // // Set the mob's direction perpendicular to the path direction.
+            // float direction = mobSpawnLocation.Rotation + Mathf.Tau / 4;
+            //
+            // // Set the mob's position to a random location.
+            // mobInstance.Position = mobSpawnLocation.Position;
+            //
+            // // Add some randomness to the direction.
+            // direction += (float)GD.RandfRange(-Mathf.Tau / 8, Mathf.Tau / 8);
+            // mobInstance.Rotation = direction;
+            //
+            // // Choose the velocity.
+            // mobInstance.LinearVelocity = new Vector2((float)GD.RandfRange(mobInstance.minSpeed, mobInstance.maxSpeed), 0).Rotated(direction);
         }
     }
 }

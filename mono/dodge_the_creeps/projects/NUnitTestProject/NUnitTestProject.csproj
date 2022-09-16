@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
 
     <IsPackable>false</IsPackable>
 
@@ -15,10 +16,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
   </ItemGroup>
 
   <ItemGroup>

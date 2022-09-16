@@ -2,10 +2,10 @@ using Godot;
 
 namespace DodgeTheCreeps
 {
-    public class HUD : CanvasLayer
+    public partial class HUD : CanvasLayer
     {
         [Signal]
-        public delegate void StartGame();
+        public delegate void StartGameEventHandler();
 
         public void ShowMessage(string text)
         {
@@ -38,7 +38,7 @@ namespace DodgeTheCreeps
         public void OnStartButtonPressed()
         {
             GetNode<Button>("StartButton").Hide();
-            EmitSignal(nameof(StartGame));
+            EmitSignal(SignalName.StartGame);
         }
 
         public void OnMessageTimerTimeout()
