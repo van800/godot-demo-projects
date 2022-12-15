@@ -47,7 +47,19 @@ namespace RiderTestRunner
         }
 
         private Assembly DefaultOnResolving(AssemblyLoadContext context, AssemblyName assemblyName)
-        { 
+        {
+            var alreadyLoadedMatch = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(loadedAssembly =>
+            {
+                var name = loadedAssembly.GetName().Name;
+                return name != null &&
+                       name.Equals(assemblyName.Name);
+            });
+
+            if (alreadyLoadedMatch != null)
+            {
+                return alreadyLoadedMatch;
+            }
+            
             var dir = new FileInfo(_runnerAssemblyPath).Directory;
             if (dir == null) return null;
             var file = new FileInfo(Path.Combine(dir.FullName, $"{assemblyName.Name}.dll"));
