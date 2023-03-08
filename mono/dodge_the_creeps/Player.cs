@@ -23,40 +23,7 @@ namespace DodgeTheCreeps
 
         public override void _Process(double delta)
         {
-            Vector2 velocity; // The player's movement vector.
-            velocity.x = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
-            velocity.y = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
-
-            var animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-
-            if (velocity.Length() > 0)
-            {
-                velocity = velocity.Normalized() * _speed;
-                animatedSprite.Play();
-            }
-            else
-            {
-                animatedSprite.Stop();
-            }
-
-            Position += velocity * (float)delta;
-            Position = new Vector2(
-                x: Mathf.Clamp(Position.x, 0, _screenSize.x),
-                y: Mathf.Clamp(Position.y, 0, _screenSize.y)
-            );
-
-            if (velocity.x != 0)
-            {
-                animatedSprite.Animation = "right";
-                // See the note below about boolean assignment.
-                animatedSprite.FlipH = velocity.x < 0;
-                animatedSprite.FlipV = false;
-            }
-            else if (velocity.y != 0)
-            {
-                animatedSprite.Animation = "up";
-                animatedSprite.FlipV = velocity.y > 0;
-            }
+            
         }
 
         public void Start(Vector2 pos)
