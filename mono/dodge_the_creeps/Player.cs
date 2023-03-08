@@ -1,45 +1,66 @@
 using Godot;
 
-namespace DodgeTheCreeps
+public partial class Player : Area2D
 {
-    public partial class Player : Area2D
+    [Signal]
+    public delegate void HitEventHandler();
+
+    [Export] public int Speed { get; set; } = 400; // How fast the player will move (pixels/sec).
+
+    public Vector2 ScreenSize { get; set; } // Size of the game window.
+
+    public override void _Ready()
     {
-        [Signal]
-        public delegate void HitEventHandler();
+        ScreenSize = GetViewportRect().Size;
+        Hide();
+    }
 
-        // These only need to be accessed in this script, so we can make them private.
-        // Private variables in C# in Godot have their name starting with an
-        // underscore and also have the "private" keyword instead of "public".
-        [Export]
-        private int _speed = 400; // How fast the player will move (pixels/sec).
+    public override void _Process(double delta)
+    {
+        var velocity = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
-        private Vector2 _screenSize; // Size of the game window.
+        var animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
-        public override void _Ready()
+        if (velocity.Length() > 0)
         {
-            _screenSize = GetViewportRect().Size;
-            Hide();
+            velocity = velocity.Normalized() * Speed;
+            animatedSprite.Play();
+        }
+        else
+        {
+            animatedSprite.Stop();
         }
 
-        public override void _Process(double delta)
-        {
-            
-        }
+        Position += velocity * (float)delta;
+        Position = Position.Clamp(Vector2.Zero, ScreenSize);
 
-        public void Start(Vector2 pos)
+        if (velocity.X != 0)
         {
-            Position = pos;
-            Show();
-            // Must be deferred as we can't change physics properties on a physics callback.
-            GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", false);
+            animatedSprite.Animation = "right";
+            // See the note below about boolean assignment.
+            animatedSprite.FlipH = velocity.X < 0;
+            animatedSprite.FlipV = false;
         }
+        else if (velocity.Y != 0)
+        {
+            animatedSprite.Animation = "up";
+            animatedSprite.FlipV = velocity.Y > 0;
+        }
+    }
 
-        public void OnPlayerBodyEntered(PhysicsBody2D body)
-        {
-            Hide(); // Player disappears after being hit.
-            EmitSignal(nameof(HitEventHandler));
-            // Must be deferred as we can't change physics properties on a physics callback.
-            GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
-        }
+    public void Start(Vector2 pos)
+    {
+        Position = pos;
+        Show();
+        // Must be deferred as we can't change physics properties on a physics callback.
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+    }
+
+    public void OnPlayerBodyEntered(PhysicsBody2D body)
+    {
+        Hide(); // Player disappears after being hit.
+        EmitSignal(SignalName.Hit);
+        // Must be deferred as we can't change physics properties on a physics callback.
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
     }
 }

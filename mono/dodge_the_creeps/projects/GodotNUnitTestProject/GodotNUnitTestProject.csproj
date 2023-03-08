@@ -19,12 +19,14 @@
 
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Dodge the Creeps with C#.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Directory.Build.props" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dodge the Creeps with C#.csproj" />
   </ItemGroup>
 
 </Project>
