@@ -34,4 +34,12 @@
     <Content Include="Directory.Build.props" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove=".godot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove=".godot\**" />
+  </ItemGroup>
+
 </Project>
