@@ -31,4 +31,8 @@
     <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="obj\Debug\net6.0\" />
+  </ItemGroup>
+
 </Project>

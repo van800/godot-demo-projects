@@ -32,6 +32,7 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Dodge the Creeps with C#"
+project/solution_directory="../../"
 
 [input]
 

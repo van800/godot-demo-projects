@@ -1,0 +1,38 @@
+<Project Sdk="Godot.NET.Sdk/4.0.0">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>DodgetheCreepswithC</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="art\enemyFlyingAlt_1.png" />
+    <Content Include="art\enemyFlyingAlt_1.png.import" />
+    <Content Include="art\enemyFlyingAlt_2.png" />
+    <Content Include="art\enemyFlyingAlt_2.png.import" />
+    <Content Include="art\enemySwimming_1.png" />
+    <Content Include="art\enemySwimming_1.png.import" />
+    <Content Include="art\enemySwimming_2.png" />
+    <Content Include="art\enemySwimming_2.png.import" />
+    <Content Include="art\enemyWalking_1.png" />
+    <Content Include="art\enemyWalking_1.png.import" />
+    <Content Include="art\enemyWalking_2.png" />
+    <Content Include="art\enemyWalking_2.png.import" />
+    <Content Include="art\gameover.wav" />
+    <Content Include="art\gameover.wav.import" />
+    <Content Include="art\House In a Forest Loop.ogg" />
+    <Content Include="art\House In a Forest Loop.ogg.import" />
+    <Content Include="art\playerGrey_up1.png" />
+    <Content Include="art\playerGrey_up1.png.import" />
+    <Content Include="art\playerGrey_up2.png" />
+    <Content Include="art\playerGrey_up2.png.import" />
+    <Content Include="art\playerGrey_walk1.png" />
+    <Content Include="art\playerGrey_walk1.png.import" />
+    <Content Include="art\playerGrey_walk2.png" />
+    <Content Include="art\playerGrey_walk2.png.import" />
+    <Content Include="fonts\FONTLOG.txt" />
+    <Content Include="fonts\LICENSE.txt" />
+    <Content Include="fonts\Xolonium-Regular.tres" />
+    <Content Include="fonts\Xolonium-Regular.ttf" />
+    <Content Include="fonts\Xolonium-Regular.ttf.import" />
+  </ItemGroup>
+</Project>
