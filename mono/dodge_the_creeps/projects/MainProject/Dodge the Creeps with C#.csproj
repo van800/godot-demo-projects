@@ -1,10 +1,11 @@
-<Project Sdk="Godot.NET.Sdk/4.0.0">
+<Project Sdk="Godot.NET.Sdk/4.1.1">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>DodgetheCreepswithC</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".vscode\settings.json" />
     <Content Include="art\enemyFlyingAlt_1.png" />
     <Content Include="art\enemyFlyingAlt_1.png.import" />
     <Content Include="art\enemyFlyingAlt_2.png" />
@@ -34,5 +35,6 @@
     <Content Include="fonts\Xolonium-Regular.tres" />
     <Content Include="fonts\Xolonium-Regular.ttf" />
     <Content Include="fonts\Xolonium-Regular.ttf.import" />
+    <Content Include="new_script.gd" />
   </ItemGroup>
 </Project>

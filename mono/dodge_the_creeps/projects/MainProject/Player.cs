@@ -17,6 +17,9 @@ public partial class Player : Area2D
 
     public override void _Process(double delta)
     {
+        GD.Print("Print _Process" + delta);
+        GD.PushWarning("PushWarning _Process" + delta);
+        
         var velocity = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
         var animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
