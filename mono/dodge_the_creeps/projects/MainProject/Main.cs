@@ -1,7 +1,20 @@
+using System;
 using Godot;
 
 public partial class Main : Node
 {
+	public override void _Process(double delta)
+	{
+		throw new Exception("");
+		base._Process(delta);
+	}
+
+	public override void _Ready()
+	{
+		// throw new Exception("");
+		base._Ready();
+	}
+
 #pragma warning disable 649
 	// We assign this in the editor, so we don't need the warning about not being assigned.
 	[Export]
@@ -16,6 +29,8 @@ public partial class Main : Node
 		GetNode<Timer>("ScoreTimer").Stop();
 
 		GetNode<HUD>("HUD").ShowGameOver();
+		
+		Input.ActionPress("");
 
 		GetNode<AudioStreamPlayer>("Music").Stop();
 		GetNode<AudioStreamPlayer>("DeathSound").Play();
@@ -23,6 +38,11 @@ public partial class Main : Node
 
 	public void NewGame()
 	{
+        GodotObject foo = null;
+        Variant v = foo;
+        if (v.AsGodotObject() == null) GD.Print("Reached!");
+        if ((GodotObject)v == null) GD.Print("Reached!");
+        
 		// Note that for calling Godot-provided methods with strings,
 		// we have to use the original Godot snake_case name.
 		GetTree().CallGroup("mobs", "queue_free");

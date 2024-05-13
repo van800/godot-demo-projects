@@ -1,4 +1,6 @@
+using System;
 using ClassLibrary1;
+using Godot;
 using NUnit.Framework;
 
 namespace TestProject1
@@ -10,6 +12,7 @@ namespace TestProject1
         public void Test()
         {
             Assert.AreEqual("Hello",new Class1().State);
+            Console.WriteLine(new Vector3I(0, 0, 0));
         }
     }
 }

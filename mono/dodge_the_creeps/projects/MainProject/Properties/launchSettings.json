@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Launch": {
+      "commandName": "Executable",
+      "executablePath": "%GODOT%",
+      "workingDirectory": "$(SolutionDir)",
+      "commandLineArgs": "--path \"$(ProjectDir)\"",
+      "hotReloadEnabled": true
+    }
+  }
+}

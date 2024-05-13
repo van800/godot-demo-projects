@@ -1,9 +1,12 @@
+using System;
 using Godot;
 
+// ReSharper disable once CheckNamespace
 public partial class Mob : RigidBody2D
 {
     public override void _Ready()
     {
+
         var animSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         animSprite.Play();
         string[] mobTypes = animSprite.SpriteFrames.GetAnimationNames();
