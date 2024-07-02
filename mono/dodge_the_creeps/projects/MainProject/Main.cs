@@ -22,7 +22,8 @@ public partial class Main : Node
 	}
 
 	public void NewGame()
-	{
+    {
+        GameOver();
 		// Note that for calling Godot-provided methods with strings,
 		// we have to use the original Godot snake_case name.
 		GetTree().CallGroup("mobs", "queue_free");

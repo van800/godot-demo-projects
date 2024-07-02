@@ -1,6 +1,6 @@
 extends Node
 
-export(PackedScene) var _mob_scene
+@export var _mob_scene: PackedScene
 var score
 
 func _ready():
@@ -41,11 +41,11 @@ func _on_MobTimer_timeout():
 	mob_instance.position = mob_spawn_location.position
 
 	# Add some randomness to the direction.
-	direction += rand_range(-TAU / 8, TAU / 8)
+	direction += randf_range(-TAU / 8, TAU / 8)
 	mob_instance.rotation = direction
 
 	# Choose the velocity.
-	mob_instance.linear_velocity = Vector2(rand_range(mob_instance.min_speed, mob_instance.max_speed), 0).rotated(direction)
+	mob_instance.linear_velocity = Vector2(randf_range(mob_instance.min_speed, mob_instance.max_speed), 0).rotated(direction)
 
 
 func _on_ScoreTimer_timeout():

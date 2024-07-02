@@ -5,12 +5,13 @@ public partial class HUD : CanvasLayer
     [Signal]
     public delegate void StartGameEventHandler();
 
+
     public void ShowMessage(string text)
     {
         var messageLabel = GetNode<Label>("MessageLabel");
         messageLabel.Text = text;
         messageLabel.Show();
-
+        
         GetNode<Timer>("MessageTimer").Start();
     }
 
