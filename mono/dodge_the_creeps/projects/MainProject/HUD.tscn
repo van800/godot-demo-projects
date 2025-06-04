@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccqoreueuxdb7"]
 
-[ext_resource type="Script" path="res://HUD.cs" id="1"]
+[ext_resource type="Script" uid="uid://clix1ark4giu7" path="res://HUD.cs" id="1"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_fopy7"]
 action = &"start_game"
