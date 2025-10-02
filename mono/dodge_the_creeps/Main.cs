@@ -1,5 +1,7 @@
+using Chickensoft.UMLGenerator;
 using Godot;
 
+[ClassDiagram]
 public partial class Main : Node
 {
 #pragma warning disable 649
@@ -16,6 +18,7 @@ public partial class Main : Node
         GetNode<Timer>("ScoreTimer").Stop();
 
         GetNode<HUD>("HUD").ShowGameOver();
+        GD.Load<Texture2D>("uid://");
 
         GetNode<AudioStreamPlayer>("Music").Stop();
         GetNode<AudioStreamPlayer>("DeathSound").Play();

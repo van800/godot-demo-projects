@@ -27,6 +27,8 @@ color = Color(0.219608, 0.372549, 0.380392, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_veqnc")]
 
+[node name="Player2" parent="." instance=ExtResource("3_veqnc")]
+
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -37,7 +39,10 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(180, 450)
+
+[node name="StartPosition2" type="Marker2D" parent="."]
+position = Vector2(300, 450)
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource("1")
@@ -52,7 +57,8 @@ stream = ExtResource("5_55d8h")
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hp1r0")
 
-[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="hit" from="Player2" to="." method="_on_player2_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

@@ -26,6 +26,10 @@ gdscript/warnings/untyped_declaration=1
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="3D Anti-Aliasing"
+
 [rendering]
 
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3

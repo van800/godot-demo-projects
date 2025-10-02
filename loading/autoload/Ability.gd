@@ -1,0 +1,1 @@
+var my_var = &'stringname literal'

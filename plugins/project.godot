@@ -29,6 +29,10 @@ config/icon="res://icon.webp"
 
 gdscript/warnings/untyped_declaration=1
 
+[dotnet]
+
+project/assembly_name="Plugin Demos"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/custom_node/plugin.cfg", "res://addons/main_screen/plugin.cfg", "res://addons/material_creator/plugin.cfg", "res://addons/material_import_plugin/plugin.cfg")

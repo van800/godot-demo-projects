@@ -14,7 +14,7 @@ func _ready() -> void:
 	# The player follows the mouse cursor automatically, so there's no point
 	# in displaying the mouse cursor.
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-
+	$"../Bullets"
 
 func _input(event: InputEvent) -> void:
 	# Getting the movement of the mouse so the sprite can follow its position.

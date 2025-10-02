@@ -5,14 +5,12 @@ extends Node2D
 # is less visual. Bullets are managed together in the `bullets.gd` script.
 
 const BULLET_COUNT = 500
-const SPEED_MIN = 20
-const SPEED_MAX = 80
-
+const SPEED_MIN    = 20
+const SPEED_MAX    = 80
 const bullet_image := preload("res://bullet.png")
-
 var bullets := []
-var shape := RID()
-
+var shape   := RID()
+var my_dict: Dictionary[String, String] = {}
 
 class Bullet:
 	var position := Vector2()
@@ -32,7 +30,7 @@ func _ready() -> void:
 		var bullet := Bullet.new()
 		# Give each bullet its own random speed.
 		bullet.speed = randf_range(SPEED_MIN, SPEED_MAX)
-		bullet.body = PhysicsServer2D.body_create()
+    	bullet.body = PhysicsServer2D.body_create()
 
 		PhysicsServer2D.body_set_space(bullet.body, get_world_2d().get_space())
 		PhysicsServer2D.body_add_shape(bullet.body, shape)
@@ -59,7 +57,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	var transform2d := Transform2D()
-	var offset := get_viewport_rect().size.x + 16
+	var offset      := get_viewport_rect().size.x + 16
 	for bullet: Bullet in bullets:
 		bullet.position.x -= bullet.speed * delta
 

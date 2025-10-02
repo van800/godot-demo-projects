@@ -26,6 +26,10 @@ gdscript/warnings/untyped_declaration=1
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [layer_names]
 
 2d_physics/layer_1="Player"

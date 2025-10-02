@@ -4,4 +4,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>Pong</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>GODOT;GODOT_OSX;GODOT_MACOS;GODOT_PC;GODOT4;GODOT4_2;GODOT4_2_1;GODOT4_OR_GREATER;GODOT4_0_OR_GREATER;GODOT4_1_OR_GREATER;GODOT4_2_OR_GREATER;GODOT4_2_0_OR_GREATER;GODOT4_2_1_OR_GREATER;TRACE;TOOLS;aa</DefineConstants>
+  </PropertyGroup>
 </Project>

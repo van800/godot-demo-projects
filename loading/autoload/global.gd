@@ -6,7 +6,7 @@ extends Node
 
 func goto_scene(path: String) -> void:
 	# This function will usually be called from a signal callback,
-	# or some other function from the running scene.
+	# or some other function from the running scen
 	# Deleting the current scene at this point might be
 	# a bad idea, because it may be inside of a callback or function of it.
 	# The worst case will be a crash or unexpected behavior.
@@ -15,6 +15,7 @@ func goto_scene(path: String) -> void:
 	# it is ensured that no code from the current scene is running:
 	_deferred_goto_scene.call_deferred(path)
 
+#region My Region Name
 
 func _deferred_goto_scene(path: String) -> void:
 	# Immediately free the current scene. There is no risk here because the
@@ -30,3 +31,4 @@ func _deferred_goto_scene(path: String) -> void:
 
 	# Set it as the current scene, only after it has been added to the tree
 	get_tree().current_scene = instanced_scene
+	#endregion

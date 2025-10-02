@@ -1,7 +1,10 @@
 extends Node
 
 @export var mob_scene: PackedScene
-var score
+
+var score: int = 0
+
+var players_alive: int = 0
 
 func game_over():
 	$ScoreTimer.stop()
@@ -14,7 +17,11 @@ func game_over():
 func new_game():
 	get_tree().call_group(&"mobs", &"queue_free")
 	score = 0
+	players_alive = 2
+	$Player.input_prefix = ""
+	$Player2.input_prefix = "p2_"
 	$Player.start($StartPosition.position)
+	$Player2.start($StartPosition2.position)
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
@@ -27,7 +34,8 @@ func _on_MobTimer_timeout():
 
 	# Choose a random location on Path2D.
 	var mob_spawn_location = get_node(^"MobPath/MobSpawnLocation")
-	mob_spawn_location.progress = randi()
+	# Randomize along the path; use progress_ratio in [0,1] for Godot 4
+	mob_spawn_location.progress_ratio = randf()
 
 	# Set the mob's position to a random location.
 	mob.position = mob_spawn_location.position
@@ -46,6 +54,7 @@ func _on_MobTimer_timeout():
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
 
+
 func _on_ScoreTimer_timeout():
 	score += 1
 	$HUD.update_score(score)
@@ -54,3 +63,13 @@ func _on_ScoreTimer_timeout():
 func _on_StartTimer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start()
+
+func _on_player_hit():
+	players_alive -= 1
+	if players_alive <= 0:
+		game_over()
+
+func _on_player2_hit():
+	players_alive -= 1
+	if players_alive <= 0:
+		game_over()

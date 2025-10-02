@@ -1,5 +1,7 @@
+using Chickensoft.UMLGenerator;
 using Godot;
 
+[ClassDiagram]
 public partial class Player : Area2D
 {
     [Signal]

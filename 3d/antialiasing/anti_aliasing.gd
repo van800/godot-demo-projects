@@ -127,7 +127,7 @@ func _on_fsr_sharpness_item_selected(index: int) -> void:
 
 func _on_viewport_size_changed() -> void:
 	$ViewportResolution.text = "Viewport resolution: %d×%d" % [
-		get_viewport().size.x * get_viewport().scaling_3d_scale,
+        (get_viewport() as SubViewport).size.x * get_viewport().scaling_3d_scale,
 		get_viewport().size.y * get_viewport().scaling_3d_scale,
 	]
 

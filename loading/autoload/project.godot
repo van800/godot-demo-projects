@@ -14,7 +14,7 @@ config/name="Autoload (Singletons)"
 config/description="This demo shows how to use autoloads to change between scenes."
 config/tags=PackedStringArray("best_practices", "demo", "official")
 run/main_scene="res://scene_a.tscn"
-config/features=PackedStringArray("4.4")
+config/features=PackedStringArray("4.5")
 run/low_processor_mode=true
 config/icon="res://icon.webp"
 
@@ -25,6 +25,8 @@ global="*res://global.gd"
 [debug]
 
 gdscript/warnings/untyped_declaration=1
+gdscript/warnings/unsafe_method_access=1
+sgdscript/warnings/unsafe_method_access=1
 
 [display]
 
@@ -32,7 +34,16 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 
+[dotnet]
+
+project/assembly_name="Autoload (Singletons)"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tests/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
